@@ -43,7 +43,7 @@ a {
   min-height: 100svh;
   background:
     linear-gradient(rgba(18, 28, 41, 0.52), rgba(18, 28, 41, 0.42)),
-    url("ds0/img/image58.png") center / cover;
+    url("assets/img/image58.png") center / cover;
   color: #fff;
 }
 
