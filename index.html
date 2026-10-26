@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Inhouse Panoramic Segmentation Dataset</title>
+    <title>Ind-PanSeg Indoor Panoramic Segmentation Dataset</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -11,20 +11,20 @@
       <nav class="topbar" aria-label="Dataset navigation">
         <a class="brand" href="#top">Home</a>
         <a href="#samples">Samples</a>
-        <a href="#release">Release</a>
+        <a href="#architecture">Architecture</a><a href="#results">Results</a><a href="#release">Release</a>
       </nav>
 
       <section class="hero" id="top">
         <div class="hero-copy">
           <p class="eyebrow">Indoor panorama segmentation</p>
-          <h1> Inhouse Panoramic Segmentation Dataset</h1>
+          <h1> Ind-PanSeg Indoor Panoramic Segmentation Dataset</h1>
           <p>
             A curated collection of wide indoor panoramas paired with human
             segmentation masks for scene understanding research.
           </p>
           
 
-          <div class="release-badge" id="release"><a href="Sample_Inhouse_Dataset_Website.zip" download="Sample_Inhouse_Dataset_Website.zip">Download Samples</a></div>
+<div id="release"><span class="release-badge">Paper · Coming soon</span> <span class="release-badge">Supplementary · Coming soon</span> <a class="release-badge" href="https://github.com/vplab-github/PanSeg/tree/main" target="_blank" rel="noopener noreferrer">Code</a> <a class="release-badge" href="https://drive.google.com/drive/folders/1EwwYCYLE1hPnE9jJDUU56amqS28EsZ1W?usp=sharing" target="_blank" rel="noopener noreferrer">Dataset</a></div>
         </div>
 
       </section>
@@ -44,9 +44,9 @@
 
       <section class="sample-grid" id="samples" aria-label="Dataset comparison samples">
         <article class="sample-card comparison" data-slider>
-          <img class="base-image" src="assets/img/Image1.png" alt="Panoramic room sample 1" />
+          <img class="base-image" src="assets/img/image58.png" alt="Panoramic room sample 1" />
           <div class="mask-layer">
-            <img src="assets/masks/Image1_GT.png" alt="Human mask for sample 1" />
+            <img src="assets/masks/image58.png" alt="Human mask for sample 1" />
           </div>
           <input class="slider-control" type="range" min="0" max="100" value="50" aria-label="Compare sample 1" />
           <span class="divider" aria-hidden="true"></span>
@@ -57,9 +57,9 @@
         </article>
 
         <article class="sample-card comparison" data-slider>
-          <img class="base-image" src="assets/img/Image2.png" alt="Panoramic room sample 2" />
+          <img class="base-image" src="assets/img/image59.png" alt="Panoramic room sample 2" />
           <div class="mask-layer">
-            <img src="assets/masks/Image2_GT.png" alt="Human mask for sample 2" />
+            <img src="assets/masks/image59.png" alt="Human mask for sample 2" />
           </div>
           <input class="slider-control" type="range" min="0" max="100" value="50" aria-label="Compare sample 2" />
           <span class="divider" aria-hidden="true"></span>
@@ -70,9 +70,9 @@
         </article>
 
         <article class="sample-card comparison" data-slider>
-          <img class="base-image" src="assets/img/Image3.png" alt="Panoramic room sample 3" />
+          <img class="base-image" src="assets/img/image60.png" alt="Panoramic room sample 3" />
           <div class="mask-layer">
-            <img src="assets/masks/Image3_GT.png" alt="Human mask for sample 3" />
+            <img src="assets/masks/image60.png" alt="Human mask for sample 3" />
           </div>
           <input class="slider-control" type="range" min="0" max="100" value="50" aria-label="Compare sample 3" />
           <span class="divider" aria-hidden="true"></span>
@@ -83,9 +83,9 @@
         </article>
 
         <article class="sample-card comparison" data-slider>
-          <img class="base-image" src="assets/img/Image4.png" alt="Panoramic room sample 4" />
+          <img class="base-image" src="assets/img/image61.png" alt="Panoramic room sample 4" />
           <div class="mask-layer">
-            <img src="assets/masks/Image4_GT.png" alt="Human mask for sample 4" />
+            <img src="assets/masks/image61.png" alt="Human mask for sample 4" />
           </div>
           <input class="slider-control" type="range" min="0" max="100" value="50" aria-label="Compare sample 4" />
           <span class="divider" aria-hidden="true"></span>
@@ -96,9 +96,9 @@
         </article>
 
         <article class="sample-card comparison" data-slider>
-          <img class="base-image" src="assets/img/Image5.png" alt="Panoramic room sample 5" />
+          <img class="base-image" src="assets/img/image62.png" alt="Panoramic room sample 5" />
           <div class="mask-layer">
-            <img src="assets/masks/Image5_GT.png" alt="Human mask for sample 5" />
+            <img src="assets/masks/image62.png" alt="Human mask for sample 5" />
           </div>
           <input class="slider-control" type="range" min="0" max="100" value="50" aria-label="Compare sample 5" />
           <span class="divider" aria-hidden="true"></span>
@@ -109,9 +109,9 @@
         </article>
 
         <article class="sample-card comparison" data-slider>
-          <img class="base-image" src="assets/img/Image6.png" alt="Panoramic room sample 6" />
+          <img class="base-image" src="assets/img/image63.png" alt="Panoramic room sample 6" />
           <div class="mask-layer">
-            <img src="assets/masks/Image6_GT.png" alt="Human mask for sample 6" />
+            <img src="assets/masks/image63.png" alt="Human mask for sample 6" />
           </div>
           <input class="slider-control" type="range" min="0" max="100" value="50" aria-label="Compare sample 6" />
           <span class="divider" aria-hidden="true"></span>
@@ -147,11 +147,12 @@
           <span class="sample-number">08</span>
         </article>
       </section>
+<section class="intro" id="architecture"><div><p class="section-kicker">PanoFusion</p><h2>Architecture</h2></div><p>CLIP features and a Deformable Adapter Network provide coarse semantics. Frozen MobileSAM priors guide SBR-Net through gated cross-attention to refine segmentation.</p></section><section class="sample-grid" aria-label="PanoFusion architecture"><figure style="margin:0;grid-column:1 / -1"><a href="panofusion_arch_img%20(2).png" target="_blank" rel="noopener noreferrer"><img class="sample-card" src="panofusion_arch_img%20(2).png" alt="PanoFusion architecture showing CLIP, DAN, MobileSAM, and SAM-guided boundary refinement" loading="lazy"></a><figcaption>PanoFusion architecture. Select the diagram to view at full resolution.</figcaption></figure></section><section class="intro" id="results"><div><p class="section-kicker">Model outputs</p><h2>Qualitative results</h2></div><p>Input panoramas, ground-truth annotations, fine-tuned OPS predictions, and PanoFusion outputs across four indoor scenes.</p></section><section class="sample-grid" aria-label="Qualitative results"><figure style="margin:0;"><a href="qual_1.png" target="_blank" rel="noopener noreferrer"><img class="sample-card" src="qual_1.png" alt="Laboratory and auditorium: input, ground truth, OPS, and PanoFusion" loading="lazy"></a><figcaption>Laboratory and auditorium comparisons.</figcaption></figure><figure style="margin:0;"><a href="qual_2.png" target="_blank" rel="noopener noreferrer"><img class="sample-card" src="qual_2.png" alt="Office and hall: input, ground truth, OPS, and PanoFusion" loading="lazy"></a><figcaption>Office and hall comparisons.</figcaption></figure></section><section class="intro" id="benchmarks"><div><p class="section-kicker">Evaluation</p><h2>Quantitative results</h2></div><p>Reported manuscript results. All metrics are percentages; higher is better. WildPASS uses the paper’s custom supervised split.</p></section><section class="sample-grid" aria-label="Benchmark results"><div style="overflow-x:auto"><h3>Ind-PanSeg · 12 test images</h3><table style="width:100%;text-align:left;border-spacing:0.5rem 1rem"><thead><tr><th scope="col">Method</th><th scope="col">mIoU</th><th scope="col">mAcc</th><th scope="col">Boundary IoU</th><th scope="col">Boundary F-score</th></tr></thead><tbody><tr><th scope="row">SegFormer</th><td>30.42</td><td>69.16</td><td>24.23</td><td>29.30</td></tr><tr><th scope="row">SAM + CNN tracking</th><td>19.89</td><td>42.33</td><td>17.53</td><td>26.77</td></tr><tr><th scope="row">OmniSAM</th><td>43.35</td><td>60.74</td><td>35.76</td><td>37.38</td></tr><tr><th scope="row">OPS</th><td>41.66</td><td>64.74</td><td>35.80</td><td>50.29</td></tr><tr><th scope="row">EDA-PSeg</th><td>31.92</td><td>55.50</td><td>29.92</td><td>62.15</td></tr><tr><th scope="row">PanoFusion</th><td>52.28</td><td>79.13</td><td>34.05</td><td>59.15</td></tr></tbody></table></div><div style="overflow-x:auto"><h3>WildPASS · 50 test images</h3><table style="width:100%;text-align:left;border-spacing:0.5rem 1rem"><thead><tr><th scope="col">Method</th><th scope="col">mIoU</th><th scope="col">mAcc</th><th scope="col">Boundary IoU</th><th scope="col">Boundary F-score</th></tr></thead><tbody><tr><th scope="row">OmniSAM</th><td>49.69</td><td>61.54</td><td>46.64</td><td>55.30</td></tr><tr><th scope="row">OPS</th><td>54.27</td><td>66.73</td><td>49.14</td><td>63.50</td></tr><tr><th scope="row">EDA-PSeg</th><td>48.00</td><td>63.02</td><td>36.54</td><td>70.40</td></tr><tr><th scope="row">PanoFusion</th><td>57.87</td><td>67.45</td><td>51.95</td><td>70.88</td></tr></tbody></table></div></section>
     </main>
 
     <footer class="site-footer">
-      <strong> Inhouse Panoramic Segmentation Dataset</strong>
-      <span>Research preview. Full dataset release coming soon. <a href="Sample_Inhouse_Dataset_Website.zip" download="Sample_Inhouse_Dataset_Website.zip">Download Samples</a></span>
+      <strong> Ind-PanSeg Indoor Panoramic Segmentation Dataset</strong>
+      <span>Research preview. Paper and supplementary material coming soon.</span>
     </footer>
 
     <script src="script.js"></script>
